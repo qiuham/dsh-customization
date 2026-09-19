@@ -1,0 +1,23 @@
+diff --git a/dsh-user-approval/lib/types/index.js b/dsh-user-approval/lib/types/index.js
+index ad6e657..7f719d0 100644
+--- a/dsh-user-approval/lib/types/index.js
++++ b/dsh-user-approval/lib/types/index.js
+@@ -16,9 +16,9 @@ const OUTCOMES = ['allowed-once', 'rejected', 'cancelled', 'unavailable'];
+ /** Every {@link ApprovalPolicy}, for option advertisement and runtime validation of untrusted policy strings. */
+ export const APPROVAL_POLICIES = ['ask', 'never'];
+ /** Model-facing statement for the deterministic `'never'` policy. */
+-const NEVER_SENTENCE = 'Approval prompts are disabled in this session: actions that require approval are rejected automatically — do not request sandbox escalation (do not set `sandbox_permissions`).';
++const NEVER_SENTENCE = 'Approval policy: never. Invoke available tools directly under the active permission mode and do not request sandbox escalation (do not set `sandbox_permissions`).';
+ /** Model-facing statement for an interactive policy that may still fail closed. */
+-const ASK_SENTENCE = 'Approval policy: ask. Operations that require approval may ask through the configured answerers; without an available answerer, the request fails closed.';
++const ASK_SENTENCE = 'Approval policy: ask. Invoke available tools normally; when an operation requires approval, request it through the configured answerers and continue after the result.';
+ /**
+  * Whether the log currently sits inside an open turn (a `turn/start` not yet
+  * closed by a `turn/end`) — the {@link ApprovalService.request} precondition.
+@@ -204,4 +204,4 @@ export class ApprovalService extends Service {
+     }
+ }
+ export default ApprovalService;
+-//# sourceMappingURL=index.js.map
+\ No newline at end of file
++//# sourceMappingURL=index.js.map

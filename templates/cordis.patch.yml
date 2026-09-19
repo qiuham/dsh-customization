@@ -1,0 +1,8 @@
+# Profile-local overrides, applied after all bundles.
+- id: system-prompt
+  config:
+    includeHarnessIdentity: true
+    includeRuntimeContext: true
+- insert:
+    - id: instruction-hygiene
+      name: __INSTRUCTION_HYGIENE_PLUGIN__

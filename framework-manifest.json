@@ -1,0 +1,50 @@
+[
+  {
+    "path": "dsh-agent-instructions/lib/index.js",
+    "patch": "dsh-agent-instructions__lib__index.js.patch",
+    "original": "340f9a8836414f76e0f0f3b09c81dfdae76ffe67c41a10b5e9c0737f20991c20",
+    "modified": "08ef5555c81930ba27e8610b77ce3c5c4b6de600b7a9291b6bc58fcf82eeebf9"
+  },
+  {
+    "path": "dsh-user-approval/lib/index.js",
+    "patch": "dsh-user-approval__lib__index.js.patch",
+    "original": "fbd3f2e348358d27234739f8cbc4bdb2d6450b0a6b1b207572463977b14a5ecb",
+    "modified": "3f20e20133d39d5f973e9f50b2d8cdb93781d60e1076e802b6a16718706c0bcb"
+  },
+  {
+    "path": "dsh-user-approval/lib/invariant.js",
+    "patch": "dsh-user-approval__lib__invariant.js.patch",
+    "original": "110595e3526409832bca365360036493ffac2ac77581fe4473b04515273ea3fa",
+    "modified": "d04a7933312f017cce13317edaddfbac60edb6ad5fdf99b9aa6bad76eb0fe5de"
+  },
+  {
+    "path": "dsh-user-approval/lib/types/index.js",
+    "patch": "dsh-user-approval__lib__types__index.js.patch",
+    "original": "14df3f0b32be58c39dbc3a12eb889ff91ae149dccc898a2cfcc631199c6f54bd",
+    "modified": "ae16e9dd3bd3f7bc65a15e243d15214afcbc3ed444275df829f3ae49790d22bd"
+  },
+  {
+    "path": "dsh-agent-presets/presets/standard/agent.cordis.yml",
+    "patch": "dsh-agent-presets__presets__standard__agent.cordis.yml.patch",
+    "original": "08a029c64fdeaabe415a5627ef73ce6f6c6bc61dadaf9989d11f9e15608907f6",
+    "modified": "1ce8a854aa079fffecdd03ee4fb74dd74f5b86895d625d1f802b22e1fcdfbbc8"
+  },
+  {
+    "path": "dsh-agent-presets/presets/ptc/agent.cordis.yml",
+    "patch": "dsh-agent-presets__presets__ptc__agent.cordis.yml.patch",
+    "original": "2a62e2dd692e65b86c792519a6d6f617404be59d9878acf0727c6b92dd077134",
+    "modified": "d0a83b45fc5264017218615baa55f3fa5ec5bb77264d08a3a2c08312e5d74928"
+  },
+  {
+    "path": "dsh-agent-presets/presets/cordis/agent.cordis.yml",
+    "patch": "dsh-agent-presets__presets__cordis__agent.cordis.yml.patch",
+    "original": "2b8d89c3137ce685f3d97f65aea5bd1c5099e08bba6c16815768245f8fb61d2d",
+    "modified": "16e42cb7eb3755572d73d0902fcbed4be69c243ed7a2186a47420c07752d2b60"
+  },
+  {
+    "path": "dsh-agent-presets/presets/minimal/agent.cordis.yml",
+    "patch": "dsh-agent-presets__presets__minimal__agent.cordis.yml.patch",
+    "original": "e75af996ab8c4cc966f8c5b54cd8dc354d7ac71bfcedbe07c8896f63bb7f073b",
+    "modified": "cb891033e3b37292230493f15e9c8cd828465db82b84e3ab5be15f97821f12ef"
+  }
+]

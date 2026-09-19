@@ -1,0 +1,19 @@
+{
+  "name": "dsh-profile-web",
+  "private": true,
+  "dependencies": {
+    "dsh-infinite-gen-4": "github:Minglink/dsh-infinite-gen-4#0a46fdece818de723db303c5f64dae4e56167b88",
+    "dsh-rewind-plugin": "github:SiriLee/dsh-rewind#0bfa08750f1cd64cc10f1251d10519b97bd9f292"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-web-app",
+        "dsh-infinite-gen-4",
+        "dsh-rewind-plugin"
+      ],
+      "patchReload": "live"
+    }
+  }
+}

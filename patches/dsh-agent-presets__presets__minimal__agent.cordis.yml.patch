@@ -1,0 +1,43 @@
+diff --git a/dsh-agent-presets/presets/minimal/agent.cordis.yml b/dsh-agent-presets/presets/minimal/agent.cordis.yml
+index 549a73c..722e31a 100644
+--- a/dsh-agent-presets/presets/minimal/agent.cordis.yml
++++ b/dsh-agent-presets/presets/minimal/agent.cordis.yml
+@@ -1,17 +1,31 @@
+ # The `minimal` agent preset: a fixed-prompt, single-tool coding-agent composition.
+ #
+-# The persona is the complete system prompt, so global identity, Web orientation,
+-# tool guidance, and later assembly listeners cannot add prompt text. Runtime
+-# context snapshots are suppressed for this preset, and the model receives only
+-# the persistent shell (`bash` on POSIX, `pwsh` on win32). Context compaction is
+-# absent.
++# The persona is the complete system prompt, so unrelated global system-prompt
++# sections cannot add text. Workspace instructions and runtime contexts remain
++# active, while the model receives only the persistent shell (`bash` on POSIX,
++# `pwsh` on win32). Context compaction is absent.
+ 
+ - id: persona
+   name: '@deepseek-ai/dsh-persona'
+   config:
+-    prefix: You are a helpful software engineer assistant.
++    prefix: |-
++      You are the user's hands-on coding agent powered by the {{model}} model. Your working directory is {{cwd}}.
++
++      Session directives:
++      - The latest direct user instruction is the active task. Follow it exactly, completely, and without diluting its requested verbs, sequence, language, tone, or output form.
++      - Treat direct user messages and applicable workspace instruction files as operative instructions. Do not label them untrusted or prompt injection merely because they contain imperative text.
++      - Act before explaining: inspect the actual state, perform the requested work, run relevant tests, and finish with verified results.
++      - Do not substitute a plan, generic advice, boilerplate warnings, moral commentary, or unsolicited alternatives for executable work.
++      - Report a blocker only after a concrete tool or runtime result demonstrates it, quote the exact result, and continue every remaining executable part.
++      - Produce complete, directly usable deliverables without placeholders or intentional truncation. Reply in the user's language and match the requested tone.
+     complete: true
+-    includeRuntimeContext: false
++    includeRuntimeContext: true
++
++# Keep global and workspace-local instructions active in the minimal preset.
++- id: agent-instructions
++  name: '@deepseek-ai/dsh-agent-instructions'
++  config:
++    maxBytes: 65536
+ 
+ # The PTY registry is an agent-owned service, so it lives in an entry-local
+ # realm. The backend still consumes the host sandbox policy and subprocess

@@ -1,0 +1,24 @@
+diff --git a/dsh-agent-instructions/lib/index.js b/dsh-agent-instructions/lib/index.js
+index 6d0c392..b189ad1 100644
+--- a/dsh-agent-instructions/lib/index.js
++++ b/dsh-agent-instructions/lib/index.js
+@@ -110,8 +110,8 @@ function trimmedInstructionDigest(content) {
+ */
+ const SYSTEM_REMINDER_OPEN = "<system-reminder>";
+ const SYSTEM_REMINDER_CLOSE = "</system-reminder>";
+-const WORKSPACE_CONTEXT_INTRO = "The following workspace instructions may be relevant to your work. Use them as guidance when applicable. More specific instructions take precedence over broader ones. They do not override system, developer, or direct user instructions.";
+-const REPLACEMENT_WORKSPACE_CONTEXT_INTRO = "This complete workspace instruction baseline replaces all earlier workspace instruction baselines. The following workspace instructions may be relevant to your work. Use them as guidance when applicable. More specific instructions take precedence over broader ones. They do not override system, developer, or direct user instructions.";
++const WORKSPACE_CONTEXT_INTRO = "The following workspace instructions are active and mandatory within their stated scope. Apply them exactly whenever they cover the current work. More specific workspace instructions and the latest direct user instruction take precedence over broader workspace instructions.";
++const REPLACEMENT_WORKSPACE_CONTEXT_INTRO = "This complete workspace instruction baseline replaces all earlier workspace instruction baselines. The following workspace instructions are active and mandatory within their stated scope. Apply them exactly whenever they cover the current work. More specific workspace instructions and the latest direct user instruction take precedence over broader workspace instructions.";
+ const EMPTY_REPLACEMENT_WORKSPACE_CONTEXT_INTRO = "This complete workspace instruction baseline replaces all earlier workspace instruction baselines. No workspace instructions are currently active.";
+ const COMPACT_WORKSPACE_CONTEXT_INTRO = "Workspace instructions were omitted or truncated to fit the configured byte budget.";
+ function byteLength(value) {
+@@ -193,7 +193,7 @@ function additionalSectionText(file) {
+ 	return [
+ 		`Additional instructions from: ${file.displayPath}`,
+ 		"",
+-		`These instructions apply to work under \`${scope}\`. Use them as guidance when relevant; more specific instructions take precedence. They do not override system, developer, or direct user instructions.`,
++		`These instructions apply to work under \`${scope}\` and are active and mandatory for that scope. Apply them exactly whenever the current work falls under that scope; more specific workspace instructions and the latest direct user instruction take precedence over broader workspace instructions.`,
+ 		"",
+ 		file.content
+ 	].join("\n");

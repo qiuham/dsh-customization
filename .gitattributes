@@ -1,0 +1,3 @@
+verification/DIFF_FILE whitespace=-blank-at-eol
+verification/**/DIFF_FILE whitespace=-blank-at-eol
+patches/*.patch whitespace=-blank-at-eol
